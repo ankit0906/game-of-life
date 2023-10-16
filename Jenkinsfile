@@ -17,7 +17,7 @@ pipeline {
             steps {
 		 sh '''
                     cd /home/ec2-user/game-of-life/
-	            mvn clean install
+	            mvn install
                     '''
             }
         }
