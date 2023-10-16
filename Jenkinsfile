@@ -7,6 +7,7 @@ pipeline {
         stage('checkout') {
             steps {
 	        sh '''
+	         rm -rf *
                 git clone https://github.com/ankit0906/game-of-life.git
 	         '''		
             }
