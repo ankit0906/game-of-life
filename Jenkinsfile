@@ -16,6 +16,7 @@ pipeline {
 	 stage('build') {
             steps {
 		 sh '''
+                    sudo su
                     cd /home/ec2-user/game-of-life/
 	            mvn clean install
                     '''
