@@ -5,25 +5,23 @@ pipeline {
         customWorkspace '/home/ec2-user'
     }
 }
-
-    stages {
+     stages {
         stage('checkout') {
             steps {
-	            	sh '''
+	        sh '''
                 git clone https://github.com/ankit0906/game-of-life.git
-	              cd game-of-life 
-		            '''		
+	         '''		
             }
         }
-		   stage('build') {
+	 stage('build') {
             steps {
-		              sh '''
+		 sh '''
                     cd /home/ec2-user/game-of-life/
-	                  mvn clean install
+	            mvn clean install
                     '''
             }
         }
-        stage('Deploy') {
+          stage('Deploy') {
             steps {
             sh ' cp game-of-life/gameoflife-web/target/gameoflife.war  /mnt/apache-tomcat-9.0.80/webapps ' 
 			
