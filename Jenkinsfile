@@ -1,5 +1,8 @@
 pipeline {
-   agent any
+    agent { node { label 'built-in'
+    customWorkspace '/home/ec2-user' }
+    }
+   
      stages {
         stage('checkout') {
             steps {
